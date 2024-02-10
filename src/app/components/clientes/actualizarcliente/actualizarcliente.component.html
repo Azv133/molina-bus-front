@@ -1,0 +1,70 @@
+<div class="grid">
+    <div class="col-12 md:col-15">
+        <div class="card">
+            <form action="" (ngSubmit)="onSubmit()">
+                <h3>Actualizar información</h3>
+                <hr>
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="name3" class="col-12 mb-2 md:col-3 md:mb-0">Nombres</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="NOMBRES" pInputText id="nombres" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Ap. Paterno</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="APPATERNO" pInputText id="appaterno" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Ap. Materno</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="APMATERNO" pInputText id="apmaterno" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Doc. Identidad</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="DOCIDENTIDAD" pInputText id="docidentidad" type="number" class="p-inputtext p-component p-element"  min="10000000" max="99999999" [ngModelOptions]="{standalone: true}" />
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Correo</label>
+                        <div class="col-12 md:col-8">  
+                            <input [(ngModel)]="CORREO" pInputText id="correo" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>  
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Celular</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="CELULAR" pInputText id="celular" type="number" class="p-inputtext p-component p-element"  min="900000000" max="999999999" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                       
+                </div>
+
+                <div  class="p-fluid p-formgrid grid">
+                    <span class="p-input-icon-left mb-2"></span>
+                    <div class="field grid md:col-4"></div>
+                    <div class="field grid md:col-4"></div>
+                    <div class="col-12 mb-0 md:col-2 md:mb-0"> 
+                        <button pbutton="" pripple="" type="submit" label="Guardar" class="p-element p-ripple p-button p-component" >
+                            <span class="p-button-label">Guardar</span>
+                            <span class="p-ink"></span>
+                        </button>
+                    </div> 
+                    <div class="col-12 md:col-2"> 
+                        <button pbutton="" pripple="" type="button" label="Cancelar" class="p-element p-ripple p-button-raised p-button-danger p-button p-component" (click)="cancelar()">
+                            <span class="p-button-label">Restaurar</span>
+                            <span class="p-ink"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

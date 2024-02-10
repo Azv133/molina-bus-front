@@ -1,0 +1,86 @@
+<div class="grid">
+    <div class="col-12 md:col-15">
+        <div class="card">
+            <form action="" (ngSubmit)="onSubmit()">
+                <h3>Actualizar información</h3>
+                <hr>
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="name3" class="col-12 mb-2 md:col-3 md:mb-0">Placa</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="PLACA" pInputText id="" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Fecha Compra</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="FECHACOMPRA" pInputText id="fechaCompra" type="date" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Año de modelo</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="MODELOANIO" pInputText id="modeloAnio" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>  
+                </div>
+
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Marca</label>
+                        <div class="col-12 md:col-8">
+                            <select [(ngModel)]="MARCA" name="marca" id="marca" class="p-inputtext p-component p-element " [ngModelOptions]="{standalone: true}">
+                                <option value="HYUNDAI">Hyundai</option>
+                                <option value="VOLKSWAGEN">Volkswagen</option>
+                                <option value="MITSUBISHI">Mitsubishi</option>
+                                <option value="JAC">Jac</option>
+                                <option value="MERCEDES BENZ">Mecedes Benz</option>
+                                <option value="HIGHER">Higher</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Num. Asientos</label>
+                        <div class="col-12 md:col-8">  
+                            <input [(ngModel)]="NUMASIENTOS" [ngModelOptions]="{standalone: true}" pInputText id="numAsientos" type="number" class="p-inputtext p-component p-element" min="35" max="60" value="40" />
+                        </div>  
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Kilometraje</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="KILOMETRAJE" pInputText id="Kilometraje" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>   
+                </div>
+
+                <div  class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Estado</label>
+                        <div class="col-12 md:col-8"> 
+                            <select [(ngModel)]="ESTADO" name="marca" id="estado" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}">
+                                <option value="ACTIVO">Activo</option>
+                                <option value="EN OBSERVACIÓN">En observación</option>
+                            </select>
+                        </div> 
+                    </div>
+                    <span class="p-input-icon-left mb-2"></span>
+                    <div class="field grid md:col-4"></div>
+                    <div class="field grid md:col-4"></div>
+                    <div class="col-12 mb-0 md:col-2 md:mb-0"> 
+                        <button pbutton="" pripple="" type="submit" label="Guardar" class="p-element p-ripple p-button p-component" >
+                            <span class="p-button-label">Guardar</span>
+                            <span class="p-ink"></span>
+                        </button>
+                    </div> 
+                    <div class="col-12 md:col-2"> 
+                        <button pbutton="" pripple="" type="button" label="Cancelar" class="p-element p-ripple p-button-raised p-button-danger p-button p-component" (click)="cancelar()">
+                            <span class="p-button-label">Restaurar</span>
+                            <span class="p-ink"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <h4>Puntaje actual: {{puntaje}}/30</h4>
+        </div>
+    </div>
+</div>

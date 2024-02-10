@@ -1,0 +1,75 @@
+<div class="grid">
+    <div class="col-12 md:col-15">
+        <div class="card">
+            <form action="" (ngSubmit)="onSubmit()">
+                <h2>Registrar un nuevo Itinerario</h2>
+                <hr>
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="name3" class="col-12 mb-2 md:col-3 md:mb-0">ID UNIDAD</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="IDUNIDAD" pInputText id="idunidad" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Origen</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="ORIGEN" pInputText id="origen" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Destino</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="DESTINO" pInputText id="destino" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>  
+                </div>
+
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Tiempo Estimado</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="TIEMPOESTIMADO" pInputText id="tiempoestimado" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Fecha de Viaje</label>
+                        <div class="col-12 md:col-8">  
+                            <input [(ngModel)]="FECHAVIAJE" pInputText id="fechaviaje" type="date" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}" />
+                        </div>  
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Hora de Salida</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="HORASALIDA" pInputText id="horasalida" type="text" class="p-inputtext p-component p-element" min="900000000" max="999999999" [ngModelOptions]="{standalone: true}" />
+                        </div>
+                    </div>   
+                </div>
+
+                <div  class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Precio($)</label>
+                        <div class="col-12 md:col-8"> 
+                            <input [(ngModel)]="PRECIO" [ngModelOptions]="{standalone: true}" pInputText id="precio" type="number" class="p-inputtext p-component p-element" min="10" max="60" value="30" />
+                        </div> 
+                    </div>
+                    <span class="p-input-icon-left mb-2"></span>
+                    <div class="field grid md:col-4"></div>
+                    <div class="field grid md:col-4"></div>
+                    <div class="col-12 mb-0 md:col-2 md:mb-0"> 
+                        <button pbutton="" pripple="" type="submit" label="Guardar" class="p-element p-ripple p-button p-component" >
+                            <span class="p-button-label">Guardar</span>
+                            <span class="p-ink"></span>
+                        </button>
+                    </div> 
+                    <div class="col-12 md:col-2"> 
+                        <button pbutton="" pripple="" type="button" label="Cancelar" class="p-element p-ripple p-button-raised p-button-danger p-button p-component"(click)= "cancelar()">
+                            <span class="p-button-label">Cancelar</span>
+                            <span class="p-ink"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

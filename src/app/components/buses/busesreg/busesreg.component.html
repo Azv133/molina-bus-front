@@ -1,0 +1,123 @@
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <h2>Buses registrados</h2>
+            <p-table #dt1 [value]="buses1" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true"
+                    styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['PLACA','MARCA','FECHACOMPRA','NUMASIENTOS', 'MODELOANIO','KILOMETRAJE','ESTADO']"
+                    responsiveLayout="scroll">
+                <ng-template pTemplate="caption"> 
+					<div class="flex justify-content-between flex-column sm:flex-row">
+						<button pButton label="Limpiar" class="p-button-outlined mb-2" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+						<span class="p-input-icon-left mb-2">
+							<i class="pi pi-search"></i>
+							<input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)" placeholder="Palabra clave" class="w-full"/>
+						</span>
+					</div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="min-width: 5rem; background-color: rgb(74, 110, 254);">
+                            <div class="flex justify-content-between align-items-center">
+								Id
+							</div>
+                        </th>
+                        <th style="min-width: 10rem; background-color: rgb(74, 110, 254);">
+                            <div class="flex justify-content-between align-items-center">
+								Placa
+							</div>
+                        </th>
+                        <th style="min-width: 5rem; background-color: rgb(74, 110, 254);">
+                            <div class="flex justify-content-between align-items-center">
+								Marca
+                                <p-columnFilter type="text" field="MARCA" display="menu" placeholder="Buscar por marca"></p-columnFilter>
+							</div>
+                        </th>
+                        <th style="min-width: 10rem; background-color: rgb(74, 110, 254);">
+                            <div class="flex justify-content-between align-items-center">
+								Fech. Compra
+							</div>
+                        </th>
+                        <th style="min-width: 5rem; background-color: rgb(74, 110, 254);">
+                            <div class="flex justify-content-between align-items-center">
+								Num. Asientos
+							</div>
+                        </th>
+                        <th style="min-width: 2rem; background-color: rgb(74, 110, 254);">
+                            <div class="flex justify-content-between align-items-center">
+								Año
+							</div>
+                        </th>
+                        <th style="min-width: 5rem; background-color: rgb(74, 110, 254);">
+                            <div class="flex justify-content-between align-items-center">
+								Kilometraje
+							</div>
+                        </th>
+                        <th style="min-width: 10rem; background-color: rgb(74, 110, 254);">
+                            <div class="flex justify-content-between align-items-center">
+								Estado
+                                <p-columnFilter type="text" field="ESTADO" display="menu" placeholder="Buscar por estado"></p-columnFilter>
+							</div>
+                        </th>
+                        <th style="min-width: 5rem; background-color: rgb(74, 110, 254);"></th>
+                    </tr>
+                    <p-confirmDialog header="Confirmación" key="confirmar" icon="pi pi-exclamation-triangle" message="¿Seguro que desea eliminar?"
+                    [style]="{width: '350px'}" acceptButtonStyleClass="p-button-text" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+                </ng-template>
+                <ng-template pTemplate="body" let-bus>
+                    <tr>
+                        <td>
+                            {{bus.IDBUS}}
+                        </td>
+                        <td>
+                            {{bus.PLACA}}
+                        </td>
+                        <td>
+                            {{bus.MARCA}}
+                        </td>
+                        <td>
+                            {{bus.FECHACOMPRA|date: 'dd/MM/yyyy'}}
+                        </td>
+                        <td>
+                            {{bus.NUMASIENTOS}}
+                        </td>
+                        <td>
+                            {{bus.MODELOANIO}}
+                        </td>
+                        <td>
+                            {{bus.KILOMETRAJE}}
+                        </td>
+                        <td>
+                            {{bus.ESTADO}}
+                        </td>
+                        <td>
+                            <button type="button" pButton pRipple icon="pi pi-pencil" style="align-items:center" (click)="op1.toggle($event)" ></button> 
+                            <p-overlayPanel #op1 [showCloseIcon]="true" [style]="{width: '1100px'}">
+                                <app-actualizarbus [idbus]="bus.IDBUS" 
+                                                    [placa]="bus.PLACA"
+                                                    [marca]="bus.MARCA"
+                                                    [fechacompra]="bus.FECHACOMPRA"
+                                                    [numasientos]="bus.NUMASIENTOS"
+                                                    [modeloanio]="bus.MODELOANIO" 
+                                                    [kilometraje]="bus.KILOMETRAJE"
+                                                    [estado]="bus.ESTADO">
+                                </app-actualizarbus>
+                            </p-overlayPanel>
+                            <button type="button" pButton pRipple icon="pi pi-trash" class="p-element p-ripple p-button-raised p-button-danger p-button p-component" (click)="deSubmit(bus.IDBUS)"></button>                        
+                            <button type="button" pButton pRipple icon="pi pi-eye" class="p-element p-ripple p-button-raised p-button-warning p-button p-component" style="align-items:center" (click)="op2.toggle($event)" ></button>
+                            <p-overlayPanel #op2 [showCloseIcon]="true" [style]="{width: '1100px'}">
+                                <app-multas [placa]="bus.PLACA"></app-multas>
+                            </p-overlayPanel>
+                        </td>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="loadingbody">
+					<tr>
+						<td colspan="8">Cargando los datos de los buses...</td>
+					</tr>
+				</ng-template>
+            </p-table>
+            <hr>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <h2>Multas</h2>
+            <p-table [value]="multas" scrollDirection="both" [scrollable]="true" 
+            scrollHeight="400px" styleClass="mt-3" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width:160px; min-width: 10rem; background-color: rgb(74, 110, 254);">Placa</th>
+                        <th style="width:160px; min-width: 10rem; background-color: rgb(74, 110, 254);">Vigencia</th>
+                        <th style="width:160px; min-width: 10rem; background-color: rgb(74, 110, 254);">Fecha de multa</th>
+                        <th style="width:160px; min-width: 10rem; background-color: rgb(74, 110, 254);">Valor</th>
+                        <th style="width:160px; min-width: 10rem; background-color: rgb(74, 110, 254);">Ciudad</th>
+                        <th style="width:160px; min-width: 10rem; background-color: rgb(74, 110, 254);">Estado de pago</th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-multas>
+                    <tr>
+                        <td style="width:160px">{{multas.placa}}</td>
+                        <td style="width:160px">{{multas.vigencia}}</td>
+                        <td style="width:160px">{{multas.fecha_multa}}</td>
+                        <td style="width:160px">{{multas.valor_multa}}</td>
+                        <td style="width:160px">{{multas.ciudad}}</td>
+                        <td style="width:160px">{{multas.pagado_si_no}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            <hr>
+        </div>
+    </div>
+</div>

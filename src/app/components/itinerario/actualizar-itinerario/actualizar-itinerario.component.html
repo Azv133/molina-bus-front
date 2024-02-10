@@ -1,0 +1,93 @@
+<div class="grid">
+    <div class="col-12 md:col-15">
+        <div class="card">
+            <form action="" (ngSubmit)="onSubmit()">
+                <h3>Actualizar información</h3>
+                <hr>
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="name3" class="col-12 mb-2 md:col-3 md:mb-0">ID unidad</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="IDUNIDAD" pInputText id="idunidad" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Origen</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="ORIGEN" pInputText id="origen" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Destino</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="DESTINO" pInputText id="destino" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>  
+                </div>
+                
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Tiempo estimado</label>
+                        <div class="col-12 md:col-8">
+                            <select [(ngModel)]="TIEMPOESTIMADO" name="tiempoestimado" id="tiempoestimado" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}">
+                                <option value="2 horas">2 horas</option>
+                                <option value="3 horas">3 horas</option>
+                                <option value="4 horas">4 horas</option>
+                                <option value="5 horas">5 horas</option>
+                                <option value="6 horas">6 horas</option>
+                                <option value="7 horas">7 horas</option>
+                                <option value="8 horas">8 horas</option>
+                                <option value="9 horas">9 horas</option>
+                                <option value="10 horas">10 horas</option>
+                                <option value="11 horas">11 horas</option>
+                                <option value="12 horas">12 horas</option>
+                                <option value="13 horas">13 horas</option>
+                                <option value="14 horas">14 horas</option>
+                                <option value="15 horas">15 horas</option>
+                                <option value="16 horas">16 horas</option>
+                                <option value="17 horas">17 horas</option>
+                                
+                             </select>
+                        </div>
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Fecha de viaje</label>
+                        <div class="col-12 md:col-8">  
+                            <input [(ngModel)]="FECHAVIAJE" pInputText id="fechaviaje" type="date" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div>  
+                    </div>
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Hora de salida</label>
+                        <div class="col-12 md:col-8">
+                            <input [(ngModel)]="HORASALIDA" pInputText id="horasalida" type="text" class="p-inputtext p-component p-element" [ngModelOptions]="{standalone: true}"/>
+                        </div> 
+                    </div>   
+                </div>
+
+                <div  class="p-fluid p-formgrid grid">
+                    <div class="field grid md:col-4">
+                        <label htmlFor="email3" class="col-12 mb-2 md:col-3 md:mb-0">Precio($)</label>
+                        <div class="col-12 md:col-8"> 
+                            <input [(ngModel)]="PRECIO" [ngModelOptions]="{standalone: true}" pInputText id="precio" type="number" class="p-inputtext p-component p-element" min="10" max="50" value="20" />
+                        </div> 
+                    </div>
+                    <span class="p-input-icon-left mb-2"></span>
+                    <div class="field grid md:col-4"></div>
+                    <div class="field grid md:col-4"></div>
+                    <div class="col-12 mb-0 md:col-2 md:mb-0"> 
+                        <button pbutton="" pripple="" type="submit" label="Guardar" class="p-element p-ripple p-button p-component" >
+                            <span class="p-button-label">Guardar</span>
+                            <span class="p-ink"></span>
+                        </button>
+                    </div> 
+                    <div class="col-12 md:col-2"> 
+                        <button pbutton="" pripple="" type="button" label="Cancelar" class="p-element p-ripple p-button-raised p-button-danger p-button p-component" (click)="cancelar()">
+                            <span class="p-button-label">Restaurar</span>
+                            <span class="p-ink"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

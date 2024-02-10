@@ -1,0 +1,23 @@
+<div class="grid p-fluid">
+    <div class="col-12 lg:col-4">
+        <div class="card">
+            <h2 style="text-align: center;">Estados de los buses</h2>
+            <hr>
+            <p-chart type="pie" [data]="pieData" [options]="pieOptions" ></p-chart>
+        </div>
+    </div>
+    <div class="col-12 lg:col-8">
+        <div class="card">
+            <h2 style="text-align: center;">Cantidad de buses por marcas</h2>
+            <hr>
+            <p-chart type="line" [data]="lineData" [options]="lineOptions"></p-chart>
+        </div>
+    </div>
+    <div class="col-12 lg:col-15">
+        <div class="card">
+            <h2 style="text-align: center;">Cantidad de buses comprados por cada mes - Periodo 2022</h2>
+            <hr>
+            <p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
+        </div>
+    </div>
+</div>
